@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { addSmurf, setError } from "../actions";
 import { connect } from "react-redux";
+
 const AddForm = (props) => {
     const [state, setState] = useState({
         name:"",
@@ -10,9 +11,11 @@ const AddForm = (props) => {
     });
 
     const handleChange = e => {
+
         setState({
             ...state,
-            [e.target.name]:e.target.value
+            [e.target.name]:e.target.value,
+            id: Date.now()
         });
     }
 
